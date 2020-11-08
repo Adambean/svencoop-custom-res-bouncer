@@ -17,4 +17,5 @@ rochelle_l4d/
 sv/
 tequila/
 twlz/
+voice_commands/
 voicecommands/
