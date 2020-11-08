@@ -70,11 +70,9 @@ To run this tool open a command prompt or terminal, then execute it passing a pa
 
 For example:
 
-    `./deploy.sh ~/.steam/steamapps/common/Sven\ Co-op`
-
-    `./deploy.sh /cygdrive/C/Program\ Files\ (x86)/Steam/steamapps/common/Sven\ Co-op`
-
-    `deploy.cmd "C:\Program Files (x86)\Steam\Steamapps\common\Sven Co-op"` (coming soon)
+* `./deploy.sh ~/.steam/steamapps/common/Sven\ Co-op`
+* `./deploy.sh /cygdrive/C/Program\ Files\ (x86)/Steam/steamapps/common/Sven\ Co-op`
+* `deploy.cmd "C:\Program Files (x86)\Steam\Steamapps\common\Sven Co-op"` *(coming soon)*
 
 Listed player models will be replaced by the stock "helmet" model regardless of whether they already exist or not.
 
@@ -95,7 +93,7 @@ If the directory exists it will be scanned recursively for all files within. Eac
 ## Built With
 
 * [Bash](https://www.gnu.org/software/bash/)
-* [Batch file](https://en.wikipedia.org/wiki/Batch_file) (coming soon)
+* [Batch file](https://en.wikipedia.org/wiki/Batch_file) *(coming soon)*
 
 ## Contributing
 
