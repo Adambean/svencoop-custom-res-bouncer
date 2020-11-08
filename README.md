@@ -71,7 +71,9 @@ To run this tool open a command prompt or terminal, then execute it passing a pa
 For example:
 
     `./deploy.sh ~/.steam/steamapps/common/Sven\ Co-op`
+
     `./deploy.sh /cygdrive/C/Program\ Files\ (x86)/Steam/steamapps/common/Sven\ Co-op`
+
     `deploy.cmd "C:\Program Files (x86)\Steam\Steamapps\common\Sven Co-op"` (coming soon)
 
 Listed player models will be replaced by the stock "helmet" model regardless of whether they already exist or not.
