@@ -227,8 +227,6 @@ if [ -f "${FILTER_SOUNDS_FILE_PATHNAME}" ]; then
 					printf " - Filter pre-emptively installed: ${FILTER_SOUND_REPLACEMENT_PATHNAME}\n"
 				fi
 			done
-
-			break
 		done < "${FILTER_SOUNDS_FILE_PATHNAME}"
 	else
 		printf "[Warning] Sounds filter file is empty.\n"
