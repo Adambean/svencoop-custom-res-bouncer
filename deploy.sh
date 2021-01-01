@@ -87,7 +87,7 @@ if [ ! -d "${GAME_BASE_DIR_PATHNAME}" ]; then
 fi
 
 if [ ! -f "${GAME_BASE_DIR_PATHNAME}/liblist.gam" ]; then
-	printf "[Error] Game base content directory invalid..\n"
+	printf "[Error] Game base content directory invalid.\n"
 	exit 1
 fi
 
