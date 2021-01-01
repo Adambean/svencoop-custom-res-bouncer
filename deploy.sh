@@ -6,6 +6,23 @@ printf "Sven Co-op custom resource bouncer\n\n"
 
 # Config
 
+PLATFORM=""
+case "$(uname -s)" in
+	Darwin)
+		PLATFORM=MacOS
+	;;
+	Linux)
+		PLATFORM=Linux
+	;;
+	CYGWIN*|MINGW32*|MSYS*|MINGW*)
+		PLATFORM=Windows
+	;;
+	*)
+		printf "[Error] Platform \"$(uname -s)\" not supported.\n"
+		exit 1
+	;;
+esac
+
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 GAME_DIR_PATHNAME=$(realpath "${DIR}/../..")
@@ -38,6 +55,9 @@ FILTER_SOUNDS_FILE_PATHNAME=$(realpath "${DIR}/filter-sounds.txt")
 
 
 # Information
+
+printf "Platform:                       ${PLATFORM}\n"
+printf "\n"
 
 printf "Directory path names:\n"
 printf " - Tool                         ${DIR}\n"
