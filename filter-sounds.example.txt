@@ -5,8 +5,7 @@ custom/
 cyborgaudio/
 daijobu_taunts/
 j/
-misc/motv/
-misc/xpss/
+misc/
 misfire/
 music/
 pixel/
@@ -17,5 +16,6 @@ rochelle_l4d/
 sv/
 tequila/
 twlz/
+vc/
 voice_commands/
 voicecommands/
