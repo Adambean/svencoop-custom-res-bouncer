@@ -8,13 +8,16 @@ It will not overrule any official content, or any content you've intentionally i
 
 ## Prerequisites
 
-This is a command line utility currently available for Bash for both Linux and Cygwin for Windows. It requires use of:
+This is a command line utility currently available as a Bash script for both Linux and Windows (via Cygwin). A Windows batch command script is in progress.
+
+The Bash script requires use of:
 
 * basename
 * cd
 * cp
 * dirname
 * find
+* ln *(Except on Windows)*
 * mkdir
 * printf
 * pwd
@@ -24,8 +27,6 @@ This is a command line utility currently available for Bash for both Linux and C
 * sed
 * sort
 * touch
-
-A Windows batch command script is in progress.
 
 ## Getting Started
 
@@ -44,7 +45,6 @@ anon
 rage_admin
 typical_anime_girl_31a
 ```
-
 
 ### Filtering sounds
 
@@ -70,9 +70,12 @@ To run this tool open a command prompt or terminal, then execute it passing a pa
 
 For example:
 
-* `./deploy.sh ~/.steam/steamapps/common/Sven\ Co-op`
-* `./deploy.sh /cygdrive/C/Program\ Files\ (x86)/Steam/steamapps/common/Sven\ Co-op`
-* `deploy.cmd "C:\Program Files (x86)\Steam\Steamapps\common\Sven Co-op"` *(coming soon)*
+* On Windows natively:
+  `deploy.cmd "C:\Program Files (x86)\Steam\Steamapps\common\Sven Co-op"` *(coming soon)*
+* On Linux natively:
+  `./deploy.sh ~/.steam/steamapps/common/Sven\ Co-op`
+* On Windows via Cygwin:
+  `./deploy.sh /cygdrive/C/Program\ Files\ (x86)/Steam/steamapps/common/Sven\ Co-op`
 
 Listed player models will be replaced by the stock "helmet" model regardless of whether they already exist or not.
 
@@ -92,8 +95,8 @@ If the directory exists it will be scanned recursively for all files within. Eac
 
 ## Built With
 
-* [Bash](https://www.gnu.org/software/bash/)
 * [Batch file](https://en.wikipedia.org/wiki/Batch_file) *(coming soon)*
+* [Bash](https://www.gnu.org/software/bash/)
 
 ## Contributing
 
