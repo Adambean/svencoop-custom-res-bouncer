@@ -118,6 +118,12 @@ IF NOT EXIST "!REPLACEMENT_PLAYER_MODEL_DIR_PATHNAME!\!REPLACEMENT_PLAYER_MODEL_
 
 
 
+:confirm
+CHOICE /C YN /T 30 /D N /M "[Warning] This Windows Batch script is not fully tested yet. Proceed at your own risk?"
+IF %ERRORLEVEL%==2 GOTO end
+
+
+
 :prepareResourceDirectories
 
 ECHO.
