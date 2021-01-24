@@ -64,6 +64,18 @@ All listed files, and files found in directories recursively, will be replaced b
 
 If you're specifying a whole directory you want to filter out you must end your line with a forward slash `/`. This matters because it determines what should be done if the directory doesn't yet exist. (Omitting the `/` won't cause a problem, it'll just limit the functionality of this tool.)
 
+#### When handling exact file paths
+
+For each file its directory is checked for existence. If it doesn't exist it'll be created, and an empty file will be created within. If the directory did exist but the file did not, then empty file will be created. If the file already exists it will be deleted then recreated as an empty file.
+
+Using exact file paths allows you to pre-emptively block sounds before they first arrive, but requires you to know in advance what the file names will be.
+
+#### When handling directories:
+
+If the directory doesn't yet exist it will be created. No further action can be taken in this case because the tool cannot pre-emptively guess what sound files will arrive. If you know the directory will exist after joining a particular server you should join that server once, allow downloading to complete, then run this tool again.
+
+If the directory exists it will be scanned recursively for all files within. Each file will be deleted then recreated as an empty file.
+
 ## Running
 
 To run this tool open a command prompt or terminal, then execute it passing a path to your "Sven Co-op" folder as argument 1.
@@ -80,18 +92,6 @@ For example:
 Listed player models will be replaced by the stock "helmet" model regardless of whether they already exist or not.
 
 Listed sounds are handled differently depending on whether they are an exact file path or directory.
-
-#### When handling exact file paths
-
-For each file its directory is checked for existence. If it doesn't exist it'll be created, and an empty file will be created within. If the directory did exist but the file did not, then empty file will be created. If the file already exists it will be deleted then recreated as an empty file.
-
-Using exact file paths allows you to pre-emptively block sounds before they first arrive, but requires you to know in advance what the file names will be.
-
-#### When handling directories:
-
-If the directory doesn't yet exist it will be created. No further action can be taken in this case because the tool cannot pre-emptively guess what sound files will arrive. If you know the directory will exist after joining a particular server you should join that server once, allow downloading to complete, then run this tool again.
-
-If the directory exists it will be scanned recursively for all files within. Each file will be deleted then recreated as an empty file.
 
 ## Built With
 
