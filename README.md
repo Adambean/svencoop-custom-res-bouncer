@@ -33,7 +33,7 @@ First you need to define a list of player models and/or sounds you want to filte
 
 ### Filtering player models
 
-Create a text file called "filter-player-models.txt" in the same directory as this tool. There is an example file called "filter-player-models.example.txt" you could copy to get started, containing just one entry as an example.
+Create a text file called "filter-player-models.txt" in the same directory as this tool. There is an example file called "examples/player-models/filter-player-models.txt" you could copy to get started, containing just one entry as an example.
 
 The contents of this file is a simple list of player models you do not wish to see in game split by lines.
 
@@ -48,7 +48,7 @@ typical_anime_girl_31a
 
 ### Filtering sounds
 
-Create a text file called "filter-sounds.txt" in the same directory as this tool. There is an example file called "filter-sounds.example.txt" you could copy to get started, containing just one entry as an example.
+Create a text file called "filter-sounds.txt" in the same directory as this tool. There is an example file at "examples/sounds/filter-sounds.txt" you could copy to get started, containing just one entry as an example.
 
 The contents of this file is a list of directories and/or files you do not wish to hear in game split by lines relative to the "sound" game resource path.
 
