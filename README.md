@@ -8,7 +8,7 @@ It will not overrule any official content, or any content you've intentionally i
 
 ## Prerequisites
 
-This is a command line utility currently available as a Bash script for both Linux and Windows (via Cygwin). A Windows batch command script is in progress.
+This is a command line utility currently available as a Bash script for both Linux and Windows (via Cygwin), and a Batch command script for Windows.
 
 The Bash script requires use of:
 
@@ -62,7 +62,7 @@ voicecommands/
 
 All listed files, and files found in directories recursively, will be replaced by an empty file.
 
-If you're specifying a whole directory you want to filter out you must end your line with a forward slash `/`. This matters because it determines what should be done if the directory doesn't yet exist. (Omitting the `/` won't cause a problem, it'll just limit the functionality of this tool.)
+If you're specifying a whole directory you want to filter out you must end your line with a forward slash `/`. This matters because it determines what should be done if the directory doesn't yet exist. (Omitting the `/` won't cause a problem, it'll just limit the functionality of this tool.) ***Even on Windows you must end with a forward slash `/`, not a backward slash `\`!***
 
 #### When handling exact file paths
 
@@ -78,12 +78,12 @@ If the directory exists it will be scanned recursively for all files within. Eac
 
 ## Running
 
-To run this tool open a command prompt or terminal, then execute it passing a path to your "Sven Co-op" folder as argument 1.
+To run this tool open a command prompt or terminal, then execute it passing a path to your "Sven Co-op" game folder as argument 1.
 
 For example:
 
 * On Windows natively:
-  `deploy.cmd "C:\Program Files (x86)\Steam\Steamapps\common\Sven Co-op"` *(coming soon)*
+  `deploy.cmd "C:\Program Files (x86)\Steam\Steamapps\common\Sven Co-op"`
 * On Linux natively:
   `./deploy.sh ~/.steam/steamapps/common/Sven\ Co-op`
 * On Windows via Cygwin:
@@ -95,7 +95,7 @@ Listed sounds are handled differently depending on whether they are an exact fil
 
 ## Built With
 
-* [Batch file](https://en.wikipedia.org/wiki/Batch_file) *(coming soon)*
+* [Batch file](https://en.wikipedia.org/wiki/Batch_file)
 * [Bash](https://www.gnu.org/software/bash/)
 
 ## Contributing
