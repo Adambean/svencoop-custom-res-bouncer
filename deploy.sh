@@ -60,11 +60,11 @@ printf "Platform:                       ${PLATFORM}\n"
 printf "\n"
 
 printf "Directory path names:\n"
-printf " - Tool                         ${DIR}\n"
-printf " - Game                         ${GAME_DIR_PATHNAME}\n"
-printf " - Base content                 ${GAME_BASE_DIR_PATHNAME}\n"
-printf " - Add-on content               ${GAME_ADDON_DIR_PATHNAME}\n"
-printf " - Downloaded content           ${GAME_DOWNLOADS_DIR_PATHNAME}\n"
+printf -- "- Tool                          ${DIR}\n"
+printf -- "- Game                          ${GAME_DIR_PATHNAME}\n"
+printf -- "- Base content                  ${GAME_BASE_DIR_PATHNAME}\n"
+printf -- "- Add-on content                ${GAME_ADDON_DIR_PATHNAME}\n"
+printf -- "- Downloaded content            ${GAME_DOWNLOADS_DIR_PATHNAME}\n"
 printf "\n"
 
 printf "Player model sub:               ${REPLACEMENT_PLAYER_MODEL_NAME}\n"
@@ -161,13 +161,13 @@ if [ -f "${FILTER_PLAYER_MODELS_FILE_PATHNAME}" ]; then
 				continue
 			fi
 
-			printf "${FILTER_PLAYER_MODEL_NAME}:\n"
+			printf -- "${FILTER_PLAYER_MODEL_NAME}:\n"
 
 			FILTER_PLAYER_MODEL_ADDON_DIR_PATHNAME=$(realpath "${GAME_ADDON_DIR_PATHNAME}/models/player/${FILTER_PLAYER_MODEL_NAME}")
 			FILTER_PLAYER_MODEL_DOWNLOADS_DIR_PATHNAME=$(realpath "${GAME_DOWNLOADS_DIR_PATHNAME}/models/player/${FILTER_PLAYER_MODEL_NAME}")
 
 			if [ -d "${FILTER_PLAYER_MODEL_DOWNLOADS_DIR_PATHNAME}" ]; then
-				printf " - Deleting directory from downloads.\n"
+				printf -- "- Deleting directory from downloads.\n"
 				rm -rf "${FILTER_PLAYER_MODEL_DOWNLOADS_DIR_PATHNAME}"
 			fi
 
@@ -183,7 +183,7 @@ if [ -f "${FILTER_PLAYER_MODELS_FILE_PATHNAME}" ]; then
 				ln -s "${REPLACEMENT_PLAYER_MODEL_DIR_PATHNAME}/${REPLACEMENT_PLAYER_MODEL_NAME}.bmp" "${FILTER_PLAYER_MODEL_ADDON_DIR_PATHNAME}/${FILTER_PLAYER_MODEL_NAME}.bmp"
 			fi
 
-			printf " - Filter installed.\n"
+			printf -- "- Filter installed.\n"
 		done < "${FILTER_PLAYER_MODELS_FILE_PATHNAME}"
 	else
 		printf "[Warning] Player models filter file is empty.\n"
@@ -214,16 +214,16 @@ if [ -f "${FILTER_SOUNDS_FILE_PATHNAME}" ]; then
 			if [ -d "${FILTER_SOUND_DOWNLOADS_PATHNAME}" ]; then
 				while read FILTER_SOUND_DOWNLOADS_SUBITEM_PATHNAME; do
 					FILTER_SOUND_REPLACEMENT_FILE_PATHNAMES+=( "${FILTER_SOUND_DOWNLOADS_SUBITEM_PATHNAME}" )
-					#printf " - Detected file to filter: ${FILTER_SOUND_DOWNLOADS_SUBITEM_PATHNAME}\n"
+					#printf -- "- Detected file to filter: ${FILTER_SOUND_DOWNLOADS_SUBITEM_PATHNAME}\n"
 				done < <(find "${FILTER_SOUND_DOWNLOADS_PATHNAME}" -type f | sort)
 			elif [ -f "${FILTER_SOUND_DOWNLOADS_PATHNAME}" ]; then
 				FILTER_SOUND_REPLACEMENT_FILE_PATHNAMES+=( "${FILTER_SOUND_DOWNLOADS_PATHNAME}" )
-				#printf " - Detected file to filter: ${FILTER_SOUND_DOWNLOADS_PATHNAME}\n"
+				#printf -- "- Detected file to filter: ${FILTER_SOUND_DOWNLOADS_PATHNAME}\n"
 			else
 				if [ "${FILTER_SOUND_NAME: -1}" != "/" ]; then
 					FILTER_SOUND_REPLACEMENT_FILE_PATHNAMES+=( "${FILTER_SOUND_DOWNLOADS_PATHNAME}" )
 				fi
-				#printf " - No downloaded directory or file detected to filter.\n"
+				#printf -- "- No downloaded directory or file detected to filter.\n"
 			fi
 
 			if [ "${FILTER_SOUND_NAME: -1}" == "/" ]; then
@@ -242,13 +242,13 @@ if [ -f "${FILTER_SOUNDS_FILE_PATHNAME}" ]; then
 						rm -f "${FILTER_SOUND_REPLACEMENT_PATHNAME}"
 						touch "${FILTER_SOUND_REPLACEMENT_PATHNAME}"
 
-						printf " - Filter installed: ${FILTER_SOUND_REPLACEMENT_PATHNAME}\n"
+						printf -- "- Filter installed: ${FILTER_SOUND_REPLACEMENT_PATHNAME}\n"
 					else
-						printf " - Filter already installed: ${FILTER_SOUND_REPLACEMENT_PATHNAME}\n"
+						printf -- "- Filter already installed: ${FILTER_SOUND_REPLACEMENT_PATHNAME}\n"
 					fi
 				else
 					touch "${FILTER_SOUND_REPLACEMENT_PATHNAME}"
-					printf " - Filter pre-emptively installed: ${FILTER_SOUND_REPLACEMENT_PATHNAME}\n"
+					printf -- "- Filter pre-emptively installed: ${FILTER_SOUND_REPLACEMENT_PATHNAME}\n"
 				fi
 			done
 		done < "${FILTER_SOUNDS_FILE_PATHNAME}"
