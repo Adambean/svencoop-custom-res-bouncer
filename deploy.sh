@@ -156,7 +156,7 @@ printf "\nFiltering player models...\n\n"
 if [ -f "${FILTER_PLAYER_MODELS_FILE_PATHNAME}" ]; then
 	if [ -s "${FILTER_PLAYER_MODELS_FILE_PATHNAME}" ]; then
 		while read FILTER_PLAYER_MODEL_NAME; do
-			FILTER_PLAYER_MODEL_NAME=$(sed 's/\r$//' <<< $FILTER_PLAYER_MODEL_NAME)
+			FILTER_PLAYER_MODEL_NAME=${FILTER_PLAYER_MODEL_NAME//[$'\t\r\n']}
 			if [ ! -n "${FILTER_PLAYER_MODEL_NAME}" ] || [ -z "${FILTER_PLAYER_MODEL_NAME}" ]; then
 				continue
 			fi
@@ -201,7 +201,7 @@ printf "\nFiltering sounds...\n\n"
 if [ -f "${FILTER_SOUNDS_FILE_PATHNAME}" ]; then
 	if [ -s "${FILTER_SOUNDS_FILE_PATHNAME}" ]; then
 		while read FILTER_SOUND_NAME; do
-			FILTER_SOUND_NAME=$(sed 's/\r$//' <<< $FILTER_SOUND_NAME)
+			FILTER_SOUND_NAME=${FILTER_SOUND_NAME//[$'\t\r\n']}
 			if [ ! -n "${FILTER_SOUND_NAME}" ] || [ -z "${FILTER_SOUND_NAME}" ]; then
 				continue
 			fi
