@@ -24,7 +24,6 @@ The Bash script requires use of:
 * read
 * realpath
 * rm
-* sed
 * sort
 * touch
 
